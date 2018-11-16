@@ -1,4 +1,4 @@
-# hello-world
+# VueJS-Auth with Rest Api
 
 ## Project setup
 ```
