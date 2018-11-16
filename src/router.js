@@ -1,11 +1,12 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import LoginComponent from "./views/login.vue"
 import SecureComponent from "./views/secure.vue"
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+
+const router = new VueRouter({
     routes: [
         {
             path: '/',
@@ -25,3 +26,19 @@ export default new Router({
         }
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    console.log(to)
+    if (localStorage.getItem('jwrsecure') != 'dm') {
+        if(to.name != 'login')
+        {   
+            next('/login');
+        }
+        else{
+            next();
+        }
+    } else {
+      next();
+    }
+})
+export default router

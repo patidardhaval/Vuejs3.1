@@ -20,6 +20,7 @@
             }
         },
         mounted() {
+          console.log(this.authenticated);
             if(!this.authenticated) {
                 this.$router.replace({ name: "login" });
             }
@@ -30,6 +31,7 @@
             },
             logout() {
                 this.authenticated = false;
+                localStorage.setItem('jwtsecret','');
             }
         }
     }
