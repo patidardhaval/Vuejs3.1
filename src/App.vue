@@ -22,15 +22,9 @@
             }
         },
         mounted() {
-          console.log(this.authenticated);
-            // if(!this.authenticated) {
-            //     this.$router.replace({ name: "login" });
-            // }
+            console.log(localStorage.getItem('jwrsecure'));
         },
         methods: {
-            setAuthenticated(status) {
-                this.authenticated = status;
-            },
             logout() {
                 this.authenticated = false;
                 localStorage.setItem('jwtsecret','');
