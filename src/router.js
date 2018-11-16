@@ -28,11 +28,9 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    console.log(to)
     if (localStorage.getItem('jwrsecure') != 'dm') {
-        if(to.name != 'login')
-        {   
-            next('/login');
+        if(to.name != 'login'){
+            next('login');
         }
         else{
             next();

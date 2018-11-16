@@ -3,7 +3,9 @@
         <div id="nav">
             <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
         </div>
-        <router-view @authenticated="setAuthenticated" />
+        <div class="container">
+            <router-view/>
+        </div>
     </div>
 </template>
 
@@ -21,9 +23,9 @@
         },
         mounted() {
           console.log(this.authenticated);
-            if(!this.authenticated) {
-                this.$router.replace({ name: "login" });
-            }
+            // if(!this.authenticated) {
+            //     this.$router.replace({ name: "login" });
+            // }
         },
         methods: {
             setAuthenticated(status) {
