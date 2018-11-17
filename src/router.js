@@ -8,7 +8,6 @@ import Secure from './components/Secure.vue'
 import Register from './components/Register.vue'
 Vue.use(Router)
 let router = new Router({
-    mode: 'history',
     routes: [{
         path: '/',
         name: 'home',
