@@ -9,10 +9,6 @@ import Register from './components/Register.vue'
 Vue.use(Router)
 let router = new Router({
     routes: [{
-        path: '/',
-        name: 'home',
-        component: Home
-    }, {
         path: '/login',
         name: 'login',
         component: Login
@@ -28,9 +24,9 @@ let router = new Router({
             requiresAuth: true
         }
     }, {
-        path: '/about',
-        name: 'about',
-        component: About
+        path: '/',
+        name: 'login',
+        component: Login
     }]
 })
 router.beforeEach((to, from, next) => {
