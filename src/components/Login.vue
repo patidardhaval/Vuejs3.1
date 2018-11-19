@@ -29,13 +29,10 @@
 </div>
  </div>
 </template>
-<style type="text/css">
+<style scoped>
 	
 /* BASIC */
 
-html {
-  background-color: #56baed;
-}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -304,18 +301,13 @@ h1{
             	password : ""
             }
 		},
-		mounted() {
-    let bs = document.createElement('link')
-     bs.setAttribute('rel','stylesheet')
-    bs.setAttribute('href', 'http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
-    document.head.appendChild(bs)
-  },
+		
 		methods: {
 		 	login: function () {
 		   		let email = this.email 
 		   		let password = this.password
 		   		this.$store.dispatch('login', { email, password })
-		   		.then(() => this.$router.push('/'))
+		   		.then(() => this.$router.push({ name: "secure" }))
 		   		.catch(err => console.log(err))
 		   	}
 		}

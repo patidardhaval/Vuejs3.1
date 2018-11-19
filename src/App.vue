@@ -28,11 +28,17 @@
           throw err;
         });
       });
-    }
+    },
+    mounted() {
+    let bs = document.createElement('link')
+     bs.setAttribute('rel','stylesheet')
+    bs.setAttribute('href', 'http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css')
+    document.head.appendChild(bs)
+  }
   }
 </script>
 
-<style>
+<style >
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
